@@ -1,6 +1,7 @@
 // src/types/content.ts
 
 import type { UUID, BaseEntity } from './common'
+export type { UUID, BaseEntity }
 
 export interface Tag {
   id: UUID

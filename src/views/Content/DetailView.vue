@@ -83,19 +83,19 @@
           </span>
         </div>
 
-        <div v-if="isNote" class="content-body" v-html="contentItem.content"></div>
+        <div v-if="isNote" class="content-body" v-html="(contentItem as Note).content"></div>
 
         <div v-else-if="isLink">
           <p>
             <strong>{{ t('content.url_label') }}:</strong>
-            <a :href="contentItem.url" target="_blank">{{ contentItem.url }}</a>
+            <a :href="(contentItem as Link).url" target="_blank">{{ (contentItem as Link).url }}</a>
           </p>
           <p>
-            <strong>{{ t('content.description') }}:</strong> {{ contentItem.description }}
+            <strong>{{ t('content.description') }}:</strong> {{ (contentItem as Link).description }}
           </p>
           <img
-            v-if="contentItem.imageUrl"
-            :src="contentItem.imageUrl"
+            v-if="(contentItem as Link).imageUrl"
+            :src="(contentItem as Link).imageUrl"
             alt="Link Preview"
             class="img-fluid rounded"
             style="max-height: 250px"

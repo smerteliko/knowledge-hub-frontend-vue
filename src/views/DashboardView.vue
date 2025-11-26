@@ -117,8 +117,6 @@ import { onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useAuthStore } from '@/stores/authStore'
 import { useContentStore } from '@/stores/contentStore'
-import type { UUID } from '@/types/common.ts'
-import { library } from '@fortawesome/fontawesome-svg-core'
 import { debounce } from 'lodash'
 
 const { t } = useI18n()
