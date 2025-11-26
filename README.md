@@ -1,54 +1,84 @@
-# vue-frontend
+# 🌐 Knowledge Hub: Personal Knowledge System (Frontend)
 
-This template should help get you started developing with Vue 3 in Vite.
+## ✨ Overview
 
-## Recommended IDE Setup
+This repository contains the Single-Page Application (SPA) frontend for the **Knowledge Hub** project. It provides a modern, interactive interface for managing personal notes and links, communicating with the Spring Boot API to handle authentication, data management, and full-text search.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### Application Features
 
-## Recommended Browser Setup
+* **Full CRUD Cycle:** Create, View, Edit, and Delete Notes and Links.
+* **Rich Text Editing:** Integrated **Tiptap** (ProseMirror-based) editor for creating formatted notes.
+* **Link Previews:** Uses the backend Jsoup parser (`/links/parse`) to fetch metadata previews.
+* **Live Search:** Integrated global search functionality using the Elasticsearch API.
+* **Export:** Triggers backend PDF and Markdown generation endpoints for content downloading.
+* **Internationalization (i18n):** Supports multiple languages (English, Russian, French).
+* **Secured Routing:** Uses **Pinia** and **Vue Router** guards for JWT-based session management.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+### Tech Stack
 
-## Type Support for `.vue` Imports in TS
+| Category | Technology | Notes |
+| :--- | :--- | :--- |
+| **Frontend** | Vue.js 3 | Composition API, `<script setup>`. |
+| **State Mgt.** | Pinia | Modern, lightweight state management. |
+| **Routing** | Vue Router | Protected routing with auth guards. |
+| **Styling** | Bootstrap 5, Font Awesome | Responsive design and iconography. |
+| **Editor** | Tiptap (ProseMirror) | HTML-based rich text editing. |
+| **Language** | TypeScript, Vue I18n | Strict typing and internationalization. |
+| **Tooling** | Vite, ESLint, Prettier | Fast build and development experience. |
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## ⚙️ Project Setup and Run Instructions
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Prerequisites
 
-## Project Setup
+* **Node.js (v18 or v20 LTS)**
+* **Backend Running:** The [Knowledge Hub Spring Backend](https://github.com/smerteliko/knowledge-hub-backend-spring) must be running and accessible at `http://localhost:8080`.
 
-```sh
-npm install
-```
+### Installation
 
-### Compile and Hot-Reload for Development
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/smerteliko/knowledge-hub-frontend-vue.git](https://github.com/smerteliko/knowledge-hub-frontend-vue.git)
+    cd knowledge-hub-frontend-vue
+    ```
 
-```sh
-npm run dev
-```
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
 
-### Type-Check, Compile and Minify for Production
+3.  **Configure API URL:**
+    The application defaults to connecting to `http://localhost:8080/api/v1`. You can change this in your `.env` file using the `VITE_API_BASE_URL` variable.
 
-```sh
-npm run build
-```
+4.  **Run Development Server:**
+    ```bash
+    npm run dev
+    ```
+    The application will launch on `http://localhost:5173`.
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+---
 
-```sh
-npm run test:unit
-```
+## 🧪 Testing and CI/CD
 
-### Lint with [ESLint](https://eslint.org/)
+### Local Testing
 
-```sh
+To run the linter and type checker locally:
+```bash
 npm run lint
+npm run type-check
 ```
+
+-----
+
+## 🤝 Contributing
+
+I welcome any suggestions and feedback for improvement. If you find a bug or want to propose a new feature, please create a **GitHub Issue** or a **Pull Request**.
+
+-----
+
+## 👨‍💻 Contact
+
+* **Name:** Nikolay Makarov
+* **GitHub:** https://github.com/smerteliko
+* **LinkedIn:** https://www.linkedin.com/in/nikolay-makarov/
